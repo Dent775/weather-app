@@ -1,13 +1,12 @@
-import React from 'react'
-import Card from './Cards'
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { getCurrentWeather } from "../../api"
+import type { Coords } from '../../types'
+import Card from './Cards'
+import Cloud from '/src/assets/cloud.svg?react'
+import Pressure from '/src/assets/pressure.svg?react'
 import Sunrise from '/src/assets/sunrise.svg?react'
 import Sunset from '/src/assets/sunset.svg?react'
-import Pressure from '/src/assets/pressure.svg?react'
 import Uv from '/src/assets/uv.svg?react'
-import Cloud from '/src/assets/cloud.svg?react'
-import type { Coords } from '../../types'
 
 type Props = { coords: Coords }
 
