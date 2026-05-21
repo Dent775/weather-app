@@ -2,26 +2,26 @@ import React, { type Dispatch, type SetStateAction } from 'react'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '../ui/select'
 
 type Props = {
-    mapType:string
-    setMapType:Dispatch<SetStateAction<string>>
+  mapType: string
+  setMapType: Dispatch<SetStateAction<string>>
 }
 
-export default function MapTypeDropdown({mapType,setMapType}: Props) {
+export default function MapTypeDropdown({ mapType, setMapType }: Props) {
   return (
-    <Select value={mapType} onValueChange={(value)=>setMapType(value)}>
-  <SelectTrigger className="w-[180px]">
-    <SelectValue placeholder="Theme" />
-  </SelectTrigger>
-  <SelectContent className='z-1001'>
-    <SelectGroup>
-      {popularCities.map(city=>(
-        <SelectItem key={city} value={city} className='capitalize'>
-            {city.split('_')[0]}
-        </SelectItem>
-      ))}
-    </SelectGroup>
-  </SelectContent>
-</Select>
+    <Select value={mapType} onValueChange={(value) => setMapType(value)}>
+      <SelectTrigger className="w-full xs:w-[180px]">
+        <SelectValue placeholder="Theme" />
+      </SelectTrigger>
+      <SelectContent className='z-1001'>
+        <SelectGroup>
+          {popularCities.map(city => (
+            <SelectItem key={city} value={city} className='capitalize'>
+              {city.split('_')[0]}
+            </SelectItem>
+          ))}
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   )
 }
 

@@ -1,3 +1,4 @@
+import { AirPollutionSchema } from "./schema/AirPollutionSchema";
 import { geocodeSchema } from "./schema/geocodeSchema";
 import { weatherSchema } from "./schema/weatherSchema";
 
@@ -23,6 +24,20 @@ export async function getGeocode(location:string){
         throw new Error("Error fetching current city")
     const data=await res.json();
     const result= geocodeSchema.safeParse(data);
+    if(!result.success)
+    {
+        console.log(result.error);
+        return null;
+    }   
+    return result.data;
+}
+
+export async function getAirPollution({lat,lon}:{lat:number,lon:number}){
+    const res=await fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`);
+    if(!res.ok)
+        throw new Error("Error fetching current city")
+    const data=await res.json();
+    const result= AirPollutionSchema.safeParse(data);
     if(!result.success)
     {
         console.log(result.error);
