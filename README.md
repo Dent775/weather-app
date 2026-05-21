@@ -1,73 +1,117 @@
-# React + TypeScript + Vite
+# 🌦️ Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive weather application built using React, TypeScript, and Vite. The app provides real-time weather information, hourly and daily forecasts, air pollution data, and interactive weather maps with multiple layers.
 
-Currently, two official plugins are available:
+🔗 Live Demo: https://weather-app-nu-three-69.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📍 Real-time location-based weather
+- 🌡️ Current temperature and weather conditions
+- 🕒 Hourly weather forecast
+- 📅 7-day forecast
+- 🌫️ Air pollution and AQI information
+- 🗺️ Interactive weather maps using Leaflet
+- 🌧️ Multiple map layers:
+  - Rain
+  - Clouds
+  - Precipitation
+  - Temperature
+  - Wind
+- 📱 Fully responsive UI
+- ⚡ Fast API fetching and caching using React Query
+- 🎨 Modern UI with Tailwind CSS and shadcn/ui
+- 🧭 Mobile side panel navigation
+- ⏳ Skeleton loading states
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Frontend
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- TanStack Query
+- Leaflet
+- React Leaflet
+- Zod
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### APIs
+- OpenWeather API
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Deployment
+- Vercel
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/weather-app.git
+cd weather-app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 2. Install dependencies
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+---
+
+### 3. Create environment variables
+
+Create a `.env` file in the root directory:
+
+```env
+VITE_OPENWEATHER_API_KEY=your_api_key
+```
+
+---
+
+### 4. Run development server
+
+```bash
+npm run dev
+```
+
+---
+
+### 5. Build for production
+
+```bash
+npm run build
+```
+
+---
+
+## 🧩 Project Highlights
+
+- Implemented efficient API caching and stale-time management using React Query
+- Built responsive dashboard layout with mobile-first design
+- Used TypeScript for strong type safety and maintainability
+- Integrated interactive weather maps with selectable layers
+- Added skeleton loading states for smoother user experience
+- Configured Leaflet marker assets properly for Vite production deployment
+
+---
+
+## 🌐 Deployment
+
+The project is deployed on Vercel:
+
+https://weather-app-nu-three-69.vercel.app/
+
+---
+
+## 📄 License
+
+This project is for learning and portfolio purposes.
