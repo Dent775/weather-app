@@ -1,22 +1,21 @@
 import { useQuery } from "@tanstack/react-query";
-import { getCurrentWeather, getGeocode } from "./api";
-import Card from "./components/cards/Cards";
+import { Suspense, useState } from "react";
+import { getGeocode } from "./api";
+import AdditionalInfo from "./components/cards/AdditionalInfo";
+import CurrentWeather from "./components/cards/CurrentWeather";
 import DailyForecast from "./components/cards/DailyForecast";
 import HourlyForecast from "./components/cards/HourlyForecast";
-import CurrentWeather from "./components/cards/CurrentWeather";
-import AdditionalInfo from "./components/cards/AdditionalInfo";
-import Maps from "./components/Maps";
-import { Suspense, useState } from "react";
-import type { Coords } from "./types";
 import LocationDropdown from "./components/dropdowns/LocationDropdown";
 import MapTypeDropdown from "./components/dropdowns/MapTypeDropdown";
+import Maps from "./components/Maps";
+import MobileHeader from "./components/MobileHeader";
+import SidePanel from "./components/SidePanel";
+import AdditionalInfoSkeleton from "./components/skeletons/AdditionalInfoSkeleton";
 import CurrentSkeleton from "./components/skeletons/CurrentSkeleton";
 import DailySkeleton from "./components/skeletons/DailySkeleton";
 import HourlySkeleton from "./components/skeletons/HourlySkeleton";
-import AdditionalInfoSkeleton from "./components/skeletons/AdditionalInfoSkeleton";
-import SidePanel from "./components/SidePanel";
+import type { Coords } from "./types";
 import Hamburger from "/src/assets/hamburger.svg?react";
-import MobileHeader from "./components/MobileHeader";
 
 function App() {
   const [coordinates, setCoordinates] = useState<Coords>({ lat: 31, lon: 76 });

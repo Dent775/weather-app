@@ -1,4 +1,3 @@
-import React from 'react'
 import Card from '../cards/Cards'
 import { Skeleton } from '../ui/skeleton'
 

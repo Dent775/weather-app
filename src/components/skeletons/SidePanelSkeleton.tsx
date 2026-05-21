@@ -1,6 +1,5 @@
-import React from 'react'
-import SideCardSkeleton from './SideCardSkeleton';
 import { Skeleton } from '../ui/skeleton';
+import SideCardSkeleton from './SideCardSkeleton';
 
 type Props = {}
 

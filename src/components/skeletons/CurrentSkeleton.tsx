@@ -1,5 +1,3 @@
-import React from 'react'
-import WeatherIcon from '../WeatherIcon'
 import Card from '../cards/Cards'
 import { Skeleton } from '../ui/skeleton'
 

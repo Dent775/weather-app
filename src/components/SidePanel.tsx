@@ -1,14 +1,14 @@
 import { getAirPollution } from "@/api";
 import type { Coords } from "@/types";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import React, { Suspense, type Dispatch, type SetStateAction } from "react";
-import Card from "./cards/Cards";
-import { Slider } from "./ui/slider";
 import clsx from "clsx";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import Information from "/src/assets/information.svg?react";
-import Chevron from "/src/assets/chevron.svg?react";
+import { Suspense, type Dispatch, type SetStateAction } from "react";
+import Card from "./cards/Cards";
 import SidePanelSkeleton from "./skeletons/SidePanelSkeleton";
+import { Slider } from "./ui/slider";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import Chevron from "/src/assets/chevron.svg?react";
+import Information from "/src/assets/information.svg?react";
 
 type Props = {
     coords: Coords;
